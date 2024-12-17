@@ -271,13 +271,20 @@
     <div class="popup" id="video">
     <button class="popup-close" onclick="closePopup('video')">X</button>
     <div class="video-container">
-        <a href="https://youtube.com/shorts/nAOng_qZMCA?si=UWQgIQVA7sXzuhuS" target="_blank">
-            <img src="image/friends2.jpg" alt="YouTube Video Thumbnail" style="width: 100%; border-radius: 10px;">
-        </a>
-        <p>Click the photo to watch shorts from YouTube</p>
+        <iframe 
+            width="100%" 
+            height="200px" 
+            src="https://www.youtube.com/embed/nAOng_qZMCA" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
     </div>
     <button onclick="closePopup('video')">Close</button>
 </div>
+
+
 
 
     <footer>

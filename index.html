@@ -150,6 +150,8 @@
         <br>
         <figcaption><strong>This is me, Nurul Shafiyyah.</strong></figcaption>
         <br><br>
+
+
         <section id="background-sound">
             <button onclick="toggleSound()" id="soundButton">Play Background Sound</button>
             <audio id="backgroundAudio" loop>
@@ -187,7 +189,6 @@
             isPlaying = !isPlaying;
         }
 
-        // Hide loader and show page content once the page is fully loaded
         window.addEventListener("load", () => {
             document.getElementById("loader").style.display = "none";
             document.body.style.visibility = "visible";

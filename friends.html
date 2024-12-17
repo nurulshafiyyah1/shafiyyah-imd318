@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Friends - Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .friend-card {
+            background-color: white;
+            width: 280px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .friend-card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .friend-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .friend-card p {
+            font-size: 16px;
+            color: white;
+            margin: 5px 0;
+        }
+
+        .friend-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Popup styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            z-index: 999;
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .popup img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .popup h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .popup button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .popup button:hover {
+            background-color: #ff4500;
+        }
+
+        /* Close button for pop-ups */
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Animation for popups */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%) scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* Popup transition */
+        .popup.show {
+            display: block;
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .video-container {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 250px;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .social-footer ul li a:hover {
+            color: #ff6347;
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1>Meet My Friends</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="friend-card" onclick="openPopup('bestfriend')">
+            <img src="image/mybesfriends.png" alt="Bestfriends">
+            <h3>My Bestfriends</h3>
+            <p>Click to know about my bestfriends!</p>
+        </div>
+
+        <div class="friend-card" onclick="openPopup('homies')">
+            <img src="image/myfriends.png" alt="Homies">
+            <h3>Homies</h3>
+            <p>Click to know about my homies!</p>
+        </div>
+    </main>
+
+    <div class="popup" id="bestfriend">
+        <button class="popup-close" onclick="closePopup('bestfriend')">X</button>
+        <img src="image/anisnajwa2.jpg" alt="Anis Najwa">
+        <h3>Anis Najwa</h3>
+        <p><strong>Age:</strong> 20</p>
+        <p><strong>Occupation:</strong> Student</p>
+        <p><strong>About:</strong> Anis is my high school bestfriend. She always supports me in everything I do.</p>
+        <button onclick="nextBestfriendPopup('maslina')">Next: Maslina</button>
+    </div>
+
+    <div class="popup" id="maslina">
+        <button class="popup-close" onclick="closePopup('maslina')">X</button>
+        <img src="image/maslina1.jpg" alt="Maslina">
+        <h3>Maslina</h3>
+        <p><strong>Age:</strong> 20</p>
+        <p><strong>Occupation:</strong> Student</p>
+        <p><strong>About:</strong> Maslina motivates me to be the best version of myself.</p>
+        <button onclick="closePopup('maslina')">Close</button>
+    </div>
+
+    <div class="popup" id="homies">
+        <button class="popup-close" onclick="closePopup('homies')">X</button>
+        <h3>Homies</h3>
+        <button onclick="nextHomiesPopup('ainul')">Next: Ainul</button>
+    </div>
+
+    <div class="popup" id="ainul">
+        <button class="popup-close" onclick="closePopup('ainul')">X</button>
+        <img src="image/enol.jpg" alt="Ainul">
+        <h3>Ainul</h3>
+        <p><strong>Age:</strong> 20</p>
+        <p><strong>Occupation:</strong> Student</p>
+        <p><strong>About:</strong> Ainul always listens to my stories and offers great advice!</p>
+        <button onclick="nextHomiesPopup('ain')">Next: Ain</button>
+    </div>
+
+    <div class="popup" id="ain">
+        <button class="popup-close" onclick="closePopup('ain')">X</button>
+        <img src="image/ain.jpg" alt="Ain">
+        <h3>Ain</h3>
+        <p><strong>Age:</strong> 20</p>
+        <p><strong>Occupation:</strong> Student</p>
+        <p><strong>About:</strong> Ain loves discovering new adventures and is a cheerful soul!</p>
+        <button onclick="nextHomiesPopup('aya')">Next: Aya</button>
+    </div>
+
+    <div class="popup" id="aya">
+        <button class="popup-close" onclick="closePopup('aya')">X</button>
+        <img src="image/aya.jpg" alt="Aya">
+        <h3>Aya</h3>
+        <p><strong>Age:</strong> 20</p>
+        <p><strong>Occupation:</strong> Student</p>
+        <p><strong>About:</strong> Aya always gives me the best advice and cheers me up when I’m down.</p>
+        <button onclick="nextHomiesPopup('video')">Watch Video</button>
+    </div>
+
+    <div class="popup" id="video">
+        <button class="popup-close" onclick="closePopup('video')">X</button>
+        <div class="video-container">
+            <video controls>
+                <source src="video/homies.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <button onclick="closePopup('video')">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nurul Shafiyyah. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function openPopup(id) {
+            const popup = document.getElementById(id);
+            popup.classList.add('show');
+        }
+
+        function closePopup(id) {
+            const popup = document.getElementById(id);
+            popup.classList.remove('show');
+        }
+
+        function nextBestfriendPopup(id) {
+            closePopup('bestfriend');
+            openPopup(id);
+        }
+
+        function nextHomiesPopup(id) {
+            const currentPopup = document.querySelector('.popup[style*="display: block;"]');
+            if (currentPopup) {
+                currentPopup.classList.remove('show');
+            }
+            openPopup(id);
+        }
+    </script>
+</body>
+</html>

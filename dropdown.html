@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="about.html">
+    <style>
+        
+        body {
+            font-family: Georgia, serif; /* Set font to Georgia */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #FCF6F5; /* Set background color */
+            color: #fff; /* Default font color remains white */
+        }
+
+        header {
+            background: #990011; /* Header background color */
+            color: #fff; /* Font color for header remains white */
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff; /* Font color for links */
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+            background: #FCF6F5; /* Background color for main */
+            color: #000; /* Font color for content changed to black */
+            text-align: center; /* Center the dropdown */
+        }
+
+        section {
+            margin-bottom: 20px;
+            color: #000; /* Ensures section text is also black */
+        }
+
+        footer {
+            background: #990011; /* Footer background color */
+            color: #fff; /* Font color for footer remains white */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px; /* Add spacing between buttons */
+        }
+
+        .dropdown button {
+            background-color: #FCF6F5; /* Match the background color */
+            color: black; /* Font color changed to black */
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none; /* Remove the border */
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Button active state - when clicked */
+        .dropdown button:active {
+            background-color: #990011; /* Color when clicked */
+            color: white; /* Text color when clicked */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #FCF6F5;
+            min-width: 160px;
+            z-index: 1;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #990011;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover button {
+            background-color: #990011;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website!</h1>
+    </header>
+
+    <main>
+        <div class="dropdown">
+            <button>About Me</button>
+            <div class="dropdown-content">
+                <a href="#">My Hobbies</a>
+                <a href="#">Education</a>
+                <a href="#">My Goals</a>
+                <a href="#">My Gallery</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>My Family</button>
+            <div class="dropdown-content">
+                <a href="#">My Father</a>
+                <a href="#">My Mother</a>
+                <a href="#">My Brother</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>My Friends</button>
+            <div class="dropdown-content">
+                <a href="#">My Bestfriends</a>
+                <a href="#">My Friends</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nurul Shafiyyah. All rights reserved. </p>
+    </footer>
+
+</body>
+</html>

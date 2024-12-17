@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .social-footer ul li a:hover {
+            color: #ff6347;
+        }
+        .food-image {
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        .food-image:hover {
+            transform: rotate(10deg); /* Rotate the image by 10 degrees */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1>Hobbies</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>My Hobbies</h2>
+        <p>I have a deep passion for reading novels, especially on Wattpad. My favorite genres are romance, action, and thriller. When it comes to horror novels, I prefer to buy physical books instead of reading them online. Aside from reading, I enjoy watching Kdramas, particularly in the romance, horror, and thriller genres, as they bring an exciting mix of emotions and suspense. I also love watching movies, but not just Korean films. I enjoy films from all around the world, appreciating the diverse storytelling styles.</p>
+
+        <div class="hobby-container">
+            <div class="hobby-item">
+                <button onclick="showPopup('wattpad')">Favourite Wattpad Story</button>
+            </div>
+            <div class="hobby-item">
+                <button onclick="showPopup('kdrama')">Favourite Korean Drama</button>
+            </div>
+            <div class="hobby-item">
+                <button onclick="showPopup('movies')">Favourite Movies</button>
+            </div>
+            <div class="hobby-item">
+                <button onclick="showPopup('cooking')">Cooking</button>
+            </div>
+        </div>
+
+        <h3>Food Showcase - My Cooking</h3>
+        <div class="food-showcase-container">
+            <div class="food-item">
+                <img src="image/food.jpg" alt="Prawn Cheong Fun" class="food-image">
+                <div class="food-description">
+                    <h4>Prawn Cheong Fun</h4>
+                    <p>This dish is made with fresh prawns and a unique steamed rice roll. It is often served with a sweet soy sauce and is a popular Cantonese dish.</p>
+                    <a class="recipe-link" href="https://thewoksoflife.com/shrimp-rice-noodle-rolls-cheung-fun/" target="_blank">Click Here for Recipe</a>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="image/food1.jpg" alt="Udon Chicken Spicy Creamy" class="food-image">
+                <div class="food-description">
+                    <h4>Udon Chicken Spicy Creamy</h4>
+                    <p>This creamy, spicy udon noodle dish with chicken and vegetables is a comforting, flavorful meal perfect for chilly days.</p>
+                    <a class="recipe-link" href="https://tiffycooks.com/creamy-chicken-udon-20-minutes/" target="_blank">Click Here for Recipe</a>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="image/food2.jpg" alt="Mushroom Soup" class="food-image">
+                <div class="food-description">
+                    <h4>Mushroom Soup and Garlic Bread</h4>
+                    <p>This rich and creamy mushroom soup is made with fresh mushrooms, cream, and a touch of garlic, creating a savory, comforting bowl.</p>
+                    <a class="recipe-link" href="https://resepichenom.com/resepi/mushroom-sup-dan-garlic-bread/show" target="_blank">Click Here for Recipe</a>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="image/food3.jpg" alt="Cantonese Fried Yee Mee" class="food-image">
+                <div class="food-description">
+                    <h4>Cantonese Fried Yee Mee</h4>
+                    <p>This classic Cantonese dish features crispy fried noodles, vegetables, and a savory sauce, making it a delicious and satisfying meal.</p>
+                    <a class="recipe-link" href="https://luveenalee.com/fried-yee-mee/" target="_blank">Click Here  for Recipe</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-popup" onclick="closePopup()">×</button>
+            <div id="popup-images"></div>
+            <div id="popup-captions"></div>
+            <a id="popup-link" href="#" target="_blank">Click Here</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Shafiyyah's Website. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const popupData = {
+            wattpad: {
+                images: [{ src: 'image/wattpad3.jpg', caption: 'Terkecuali: Mikael.' }],
+                link: 'https://www.wattpad.com/268729979-terkecuali-mikael-bab-1',
+            },
+            kdrama: {
+                images: [{ src: 'image/QOT.png', caption: 'Queen Of Tears.' }],
+                link: 'https://www.imdb.com/title/tt27668559/',
+            },
+            movies: {
+                images: [{ src: 'image/midnight.jpg', caption: 'Midnight' }],
+                link: 'https://www.imdb.com/title/tt14757872/',
+            },
+            cooking: {
+                images: [{ src: 'image/sup2.jpg', caption: 'Chicken Soup' }],
+                link: 'https://www.rasa.my/resipi-sup-ayam-tumis-darat-terlajak-mudah/',
+            },
+        };
+
+        function showPopup(type) {
+            const popupContent = popupData[type];
+            const imagesContainer = document.getElementById('popup-images');
+            const captionsContainer = document.getElementById('popup-captions');
+
+            imagesContainer.innerHTML = popupContent.images
+                .map((item) => `<img src="${item.src}" alt="Popup Image">`)
+                .join('');
+            captionsContainer.innerHTML = popupContent.images
+                .map((item) => `<div class="caption">${item.caption}</div>`)
+                .join('');
+            document.getElementById('popup-link').href = popupContent.link;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

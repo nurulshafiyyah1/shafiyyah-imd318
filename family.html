@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family - Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    text-align: center;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+.social-footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.social-footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.social-footer ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.social-footer ul li img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.social-footer ul li a:hover {
+    color: #ff6347;
+}
+
+.family-member {
+    display: flex;
+    margin-bottom: 30px;
+    border: 2px solid #f0f0f0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(-100%); 
+    animation: swipeIn 1s ease-out forwards; 
+}
+
+.family-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+@keyframes swipeIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.family-member h3 {
+    margin: 0;
+    font-size: 24px;
+    color: black; 
+}
+
+.family-member p {
+    font-size: 16px;
+    color: white; 
+    margin: 5px 0;
+}
+
+.family-member .biodata {
+    max-width: 600px;
+}
+
+
+@media (max-width: 768px) {
+    .family-member {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .family-member img {
+        width: 100px; 
+        height: 100px;
+        margin-bottom: 10px; 
+    }
+
+    .family-member h3 {
+        font-size: 20px; 
+    }
+
+    .family-member p {
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .family-member img {
+        width: 80px; 
+        height: 80px;
+    }
+}
+
+
+.swipe-container {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.family-content {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+}
+
+.family-content.hidden {
+    transform: translateY(-100%);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1>My Family</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Meet My Family</h2>
+        <p>Our family is a tight-knit group of 3 individuals, united by love, laughter, and shared values. We cherish quality time together, often spending time together and travelling. As a family, we value respect, love, and gratitude. 
+
+        
+        <div class="family-member">
+            <img src="image/abah.jpg" alt="Father's Photo">
+            <div class="biodata">
+                <h3>My Father</h3>
+                <p><strong>Name:</strong> Mohamad Naser Bin Ahmad</p>
+                <p><strong>Date of Birth:</strong>14 March 1975</p>
+                <p><strong>Age:</strong>49 Years Old</p>
+                <p><strong>Occupation:</strong> Supervisor</p>
+                <p><strong>About:</strong>My father is a kind-hearted and hardworking supervisor. He is always willing to lend a helping hand and is a source of support for our family. With his strong work ethic and dedication, he consistently strives to achieve excellence in his profession. He is not only a provider but also a role model, inspiring us to work hard and pursue our dreams.</p>
+            </div>
+        </div>
+
+        <!-- Mother -->
+        <div class="family-member">
+            <img src="image/umi1.jpg" alt="Mother's Photo">
+            <div class="biodata">
+                <h3>My Mother</h3>
+                <p><strong>Name:</strong> Che' Nun Binti Jusoh</p>
+                <p><strong>Date of Birth:</strong>27 August 1975</p>
+                <p><strong>Age:</strong> 49 Years Old</p>
+                <p><strong>Occupation:</strong> Clerk</p>
+                <p><strong>About:</strong>My mother is a compassionate and nurturing clerk. Despite her busy schedule, she is always willing to cook delicious meals for us and keep our home tidy. Her unwavering love and support, coupled with her tireless efforts, have shaped who we are today.</p>
+            </div>
+        </div>
+
+        <!-- Brother -->
+        <div class="family-member">
+            <img src="image/abang.jpg" alt="Brother's Photo">
+            <div class="biodata">
+                <h3>My Brother</h3>
+                <p><strong>Name: </strong>Muhammad Saiful Azzawary Bin Mohamad Naser</p>
+                <p><strong>Date of Birth:</strong>1 January 1999</p>
+                <p><strong>Age:</strong>25 Years Old</p>
+                <p><strong>Occupation:</strong> Work at e-mart24</p>
+                <p><strong>About:</strong>My brother is a hardworking individual who works at E-Mart24 in Alor Star. He is a very talkative and sociable person, always ready with a funny story or interesting anecdote. Despite his busy schedule, he always finds time to connect with me and be my partner in crime. He is not just my brother; he is also one of my closest friends.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Shafiyyah's Website. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+
+        <style>
+        
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .social-footer ul li a:hover {
+            color: #ff6347;
+        }
+    </style>
+    </footer>
+</body>
+</html>

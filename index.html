@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page Loader Styles */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #FF6347;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Fade-in animation for other elements */
+        body {
+            animation: fadeIn 2s ease-in-out;
+            visibility: hidden; /* Hide the content until the page is loaded */
+        }
+
+        header, nav, main, footer {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        #video-section, #background-sound {
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        #background-sound button {
+            background-color: #FFC1C1;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #background-sound button:hover {
+            background-color: #FF9999;
+        }
+
+        #background-sound button:focus {
+            outline: none;
+        }
+
+        img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Short Introduction About Myself</h2>
+        <p>Hello, Welcome to my Website! My name is Nurul Shafiyyah Binti Mohamad Naser. You can call me "Shaa". I am a student in Information Management course and currently on my final semester. My journey in this course has been exciting, as it allows me to explore my interest in technology, organization, and data management.</p>
+        <img src="image/myself.png" alt="Image">
+        <br>
+        <figcaption><strong>This is me, Nurul Shafiyyah.</strong></figcaption>
+        <br><br>
+        
+        <section id="video-section">
+            <h2>Video About Myself</h2>
+            <video width="600" controls>
+                <source src="video/myself.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p><strong>Watch this video to see me</strong></p>
+        </section>
+
+        <section id="background-sound">
+            <button onclick="toggleSound()" id="soundButton">Play Background Sound</button>
+            <audio id="backgroundAudio" loop>
+                <source src="audio/mood-lofi.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nurul Shafiyyah. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        let isPlaying = false;
+        const soundButton = document.getElementById("soundButton");
+        const backgroundAudio = document.getElementById("backgroundAudio");
+
+        function toggleSound() {
+            if (isPlaying) {
+                backgroundAudio.pause();
+                soundButton.textContent = "Play Background Sound";
+            } else {
+                backgroundAudio.play();
+                soundButton.textContent = "Pause Background Sound";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Hide loader and show page content once the page is fully loaded
+        window.addEventListener("load", () => {
+            document.getElementById("loader").style.display = "none";
+            document.body.style.visibility = "visible";
+        });
+    </script>
+</body>
+</html>

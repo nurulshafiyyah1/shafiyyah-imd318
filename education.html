@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education - Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the click-to-show content */
+        .education-content {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Adding smooth fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .education-title {
+            cursor: pointer;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .education-title:hover {
+            color: #0056b3;
+        }
+
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1>My Education</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-message">
+        <span>Click on the titles to learn more about my schools!</span>
+    </div>
+
+    <main>
+        <h2>My Educational Journey</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>School Name & Logo</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>Primary School</td>
+                    <td>
+                        <a href="https://ms.wikipedia.org/wiki/Sekolah_Kebangsaan_Paya_Mak_Insun" target="_blank">
+                            <img src="image/skpmi.jpg" alt="Primary School Logo" class="school-logo">
+                        </a>
+                    </td>
+                    <td>
+                        <span class="education-title" onclick="toggleContent('primary-content')">Click to learn more</span>
+                        <div id="primary-content" class="education-content">
+                            <p>I attended Sekolah Kebangsaan Paya Mak Insun (SKPMI) from 2011 to 2016. My primary school was a place of joy and learning. The teachers were kind and patient, always encouraging us to reach our full potential. I loved playing with my friends during recess, exploring the vast playground, and participating in various school activities. The library was my favorite place, filled with books that sparked my imagination. I cherish the memories of those formative years, as they shaped me into the person I am today.</p>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Secondary School</td>
+                    <td>
+                        <a href="https://ms.wikipedia.org/wiki/Sekolah_Model_Khas_Bukit_Jenun" target="_blank">
+                            <img src="image/smokbj.jpg" alt="Secondary School Logo" class="school-logo">
+                        </a>
+                    </td>
+                    <td>
+                        <span class="education-title" onclick="toggleContent('secondary-content')">Click to learn more</span>
+                        <div id="secondary-content" class="education-content">
+                            <p>After finished primary school, I continued my education at Sekolah Model Khas Bukit Jenun (SMoKBJ) from 2017 to 2021. My secondary school years were a whirlwind of academic challenges and personal growth. The rigorous curriculum pushed me to my limits, fostering intellectual curiosity and critical thinking. I formed lifelong friendships with classmates who shared my passions and aspirations. Extracurricular activities, from sports to clubs, enriched my experiences and helped me discover hidden talents.</p>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>University</td>
+                    <td>
+                        <a href="https://kedah.uitm.edu.my/" target="_blank">
+                            <img src="image/uitm.png" alt="University Logo" class="school-logo">
+                        </a>
+                    </td>
+                    <td>
+                        <span class="education-title" onclick="toggleContent('university-content')">Click to learn more</span>
+                        <div id="university-content" class="education-content">
+                            <p>I am currently pursuing my diploma at Universiti Teknologi Mara (UiTM) Cawangan Kedah since 2022. My pursuit of an information management diploma at UiTM ignited a passion for organizing, analyzing, and interpreting vast amounts of data. The rigorous coursework challenged me to think critically, solve complex problems, and develop a keen eye for detail. I delved into subjects like database management, information systems, and data mining, gaining practical skills and theoretical knowledge. Through internships and research projects, I honed my ability to apply these skills to real-world challenges, paving the way for a fulfilling career in the ever-evolving field of information management.</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Shafiyyah's Website. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

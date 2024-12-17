@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add a wrapper around elements to show the animation */
+        .animated {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .animated.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .experience-gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .experience-gallery img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+
+        .experience-gallery a {
+            text-decoration: none;
+        }
+
+        .experience-description {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .marquee-wrapper {
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f8f8;
+            padding: 10px 0;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            animation: scrollMarquee 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-content a {
+            text-decoration: none;
+            text-align: center;
+            color: black;
+        }
+
+        .marquee-content img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            transition: transform 0.3s;
+        }
+
+        .marquee-content img:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes scrollMarquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .youtube-playlist {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .youtube-playlist iframe {
+            width: 80%;
+            height: 300px;
+            border: none;
+        }
+
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1>About Me</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="animated">About Me</h2>
+        <p class="animated">In my family, I am the youngest child. My brother and I are the only siblings that I have. I reside in Kedah's Gurun. This year, I turn 19 years old.</p>
+
+        <table class="animated">
+            <thead>
+               <tr>
+                   <th>About Me</th>
+                   <th>Details</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Full Name</td>
+                    <td>Nurul Shafiyyah Binti Mohamad Naser</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>3 January 2005</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>
+                    <a href="tel:+60174285829" style="color: blue; text-decoration: none;">017-4285829</a>
+                    <br>
+                    <a href="https://wa.me/60174285829" style="color: blue; text-decoration: none;">Whatsapp</a>  
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="animated">My Goals</h3>
+        <table class="animated">
+            <thead>
+               <tr>
+                   <th>Goals</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Complete my diploma with honors and achieve a CGPA of 3.5 or above.</td>
+                </tr>
+                <tr>
+                    <td>Pursue further studies in Information Management field until Master.</td>
+                </tr>
+                <tr>
+                    <td>Further studies overseas.</td>
+                </tr>
+                <tr>
+                    <td>Become a volunteer in many more programs.</td>
+                </tr>
+                <tr>
+                    <td>Visit at least 3 new countries: Madinah, Korea, and Italy.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="animated">My Experience</h3>
+        <div class="experience-gallery animated">
+            <a href="volunteer.html">
+                <img src="image/volunteer.png" alt="Experience 1">
+                <p class="experience-description">Volunteer PBIM</p>
+            </a>
+            <a href="event.html">
+                <img src="image/event4.png" alt="Experience 2">
+                <p class="experience-description">Event</p>
+            </a>
+            <a href="class.html">
+                <img src="image/class.png" alt="Experience 3">
+                <p class="experience-description">Class Event</p>
+            </a>
+            <a href="citra.html">
+                <img src="image/CI.png" alt="Experience 4">
+                <p class="experience-description">Citra Ilmu</p>
+            </a>
+        </div>
+
+        <h5 class="animated">My Favourite Albums</h5>
+        <div class="marquee-wrapper animated">
+            <div class="marquee-content">
+                <a href="https://youtube.com/playlist?list=OLAK5uy_luzvsG76YoFHD04gaLWXG6pIFNsFmbIfY&si=N2529EQY8Z2vppv3" target="_blank">
+                    <img src="image/enhypen.jpg" alt="Enhypen">
+                    <p>Enhypen</p>
+                </a>
+                <a href="https://youtu.be/DwFDv7m1gAw?si=hNGTRNVYhfghKaJW" target="_blank">
+                    <img src="image/svt.jpg" alt="Seventeen">
+                    <p>Seventeen</p>
+                </a>
+                <a href="https://youtu.be/6IJrwbiktkY?si=p-vhgQLol5Ql4r-D" target="_blank">
+                    <img src="image/ateez.jpg" alt="Ateez">
+                    <p>Ateez</p>
+                </a>
+                <a href="https://youtu.be/eto-4V82YtU?si=b9MJJG0Lfw428RiQ" target="_blank">
+                    <img src="image/swim.jpg" alt="Chase Atlantic">
+                    <p>Chase Atlantic</p>
+                </a>
+            </div>
+        </div>
+
+        <h5 class="animated">My YouTube Playlist</h5>
+        <div class="youtube-playlist animated">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLjwj84A40zHfka2NG1NWg3MXNejpc0m4K" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Shafiyyah's Website. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+       
+        const elements = document.querySelectorAll('.animated');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(element => observer.observe(element));
+    </script>
+</body>
+</html>

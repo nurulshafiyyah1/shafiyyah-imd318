@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Shafiyyah's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gallery Container */
+        .gallery-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #FCF6F5;
+            border-radius: 10px;
+        }
+
+        /* Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Gallery Item */
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2em;
+            color: black;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            animation: popIn 0.3s ease-in-out;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Animation for pop-in effect */
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .audio-controls button {
+            padding: 5px 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #FFC1C1;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .audio-controls button:hover {
+            background-color: #FF9999;
+        }
+
+        .scroll-message {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="image/sha-logo.png" alt="Header Image">
+        </a>
+        <h1 style="text-align: center; margin-top: 20px; font-size: 2em; color: white;">My Gallery</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="hobies.html">Hobbies</a></li>
+            <li><a href="education.html">My Education</a></li>
+            <li><a href="family.html">My Family</a></li>
+            <li><a href="friends.html">My Friends</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welcome to My Gallery</h1>
+    <div class="scroll-message">
+        <span>Click on the photo and click 'Play' to hear a song</span>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <!-- Gallery items with hover animation -->
+            <div class="gallery-item" onclick="openModal('image/shaaaaaa.jpg', 'audio/kiof-igloo.mp3')">
+                <img src="image/shaaaaaa.jpg" alt="Photo 1">
+                <div class="description">Me at Unknown Cafe</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/shaa.jpg', 'audio/judas.mp3')">
+                <img src="image/shaa.jpg" alt="Photo 2">
+                <div class="description">Me at UiTM</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/shaa2.jpg', 'audio/bgly.mp3')">
+                <img src="image/shaa2.jpg" alt="Photo 3">
+                <div class="description">Me at Ladang Kenaf, Perlis</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/abah.jpg', 'audio/nidji.mp3')">
+                <img src="image/abah.jpg" alt="Photo 4">
+                <div class="description">My Abah :3</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/umi1.jpg', 'audio/iwby.mp3')">
+                <img src="image/umi1.jpg" alt="Photo 5">
+                <div class="description">My Umi :3</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/abang.jpg', 'audio/lonown.mp3')">
+                <img src="image/abang.jpg" alt="Photo 6">
+                <div class="description">My Abang :3</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/mybesfriends.png', 'audio/doja.mp3')">
+                <img src="image/mybesfriends.png" alt="Photo 7">
+                <div class="description">My Bestfriends</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/myfriends.png', 'audio/tata.mp3')">
+                <img src="image/myfriends.png" alt="Photo 8">
+                <div class="description">Homies</div>
+            </div>
+            <div class="gallery-item" onclick="openModal('image/volunteer.png', 'audio/drama.mp3')">
+                <img src="image/volunteer.png" alt="Photo 9">
+                <div class="description">Volunteer at Penang 2nd Bridge</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Full-size Image">
+        <div class="audio-controls" id="audioControls" style="display: none;">
+            <button onclick="playAudio()">Play</button>
+        </div>
+        <audio id="modalAudio"></audio>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nurul Shafiyyah. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="social-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/nurulshafiyyah_/profilecard/?igsh=NXpuN2NhMjV2bnp2" target="_blank"><img src="image/ig.png" alt="Instagram"></a></li>
+            <li><a href="https://x.com/shaaaaaaae_?s=21" target="_blank"><img src="image/x.png" alt="X (formerly Twitter)"></a></li>
+            <li><a href="https://www.tiktok.com/@nrlshfyyh?_t=8sGpscoj544&_r=1" target="_blank"><img src="image/tt.png" alt="TikTok"></a></li>
+        </ul>
+
+        <style>
+        .social-footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-footer p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .social-footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .social-footer ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .social-footer ul li img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .social-footer ul li a:hover {
+            color: #ff6347;
+        </style>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalAudio = document.getElementById('modalAudio');
+        const audioControls = document.getElementById('audioControls');
+
+        function openModal(imageSrc, audioSrc = null) {
+            modal.style.display = 'flex';
+            modalImage.src = imageSrc;
+
+            if (audioSrc) {
+                modalAudio.src = audioSrc;
+                modalAudio.load();
+                audioControls.style.display = 'flex';
+            } else {
+                audioControls.style.display = 'none';
+                modalAudio.pause();
+            }
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            modalAudio.pause();
+        }
+
+        function playAudio() {
+            modalAudio.play();
+        }
+    </script>
+</body>
+</html>

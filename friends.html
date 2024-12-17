@@ -51,7 +51,7 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Popup styling */
+        
         .popup {
             display: none;
             position: fixed;
@@ -100,7 +100,6 @@
             background-color: #ff4500;
         }
 
-        /* Close button for pop-ups */
         .popup-close {
             position: absolute;
             top: 10px;
@@ -113,7 +112,7 @@
             cursor: pointer;
         }
 
-        /* Animation for popups */
+        
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
@@ -125,7 +124,6 @@
             }
         }
 
-        /* Popup transition */
         .popup.show {
             display: block;
             animation: fadeInUp 0.5s forwards;
@@ -271,15 +269,16 @@
     </div>
 
     <div class="popup" id="video">
-        <button class="popup-close" onclick="closePopup('video')">X</button>
-        <div class="video-container">
-            <video controls>
-                <source src="video/homies.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <button onclick="closePopup('video')">Close</button>
+    <button class="popup-close" onclick="closePopup('video')">X</button>
+    <div class="video-container">
+        <a href="https://youtube.com/shorts/nAOng_qZMCA?si=UWQgIQVA7sXzuhuS" target="_blank">
+            <img src="image/friends2.jpg" alt="YouTube Video Thumbnail" style="width: 100%; border-radius: 10px;">
+        </a>
+        <p>Click the photo to watch shorts from YouTube</p>
     </div>
+    <button onclick="closePopup('video')">Close</button>
+</div>
+
 
     <footer>
         <p>&copy; 2024 Nurul Shafiyyah. All Rights Reserved.</p>
